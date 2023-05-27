@@ -250,7 +250,7 @@ class HuggingFaceAutoLM(BaseLM):
             model = self.AUTO_MODEL_CLASS.from_pretrained(
                 pretrained,
                 device_map="auto",
-                load_in_8bit=load_in_8bit,
+                load_in_8bit=True,
             )
         else:
             from auto_gptq import AutoGPTQForCausalLM
