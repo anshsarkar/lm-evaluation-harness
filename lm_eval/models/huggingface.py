@@ -249,13 +249,8 @@ class HuggingFaceAutoLM(BaseLM):
         if quantized is None:
             model = self.AUTO_MODEL_CLASS.from_pretrained(
                 pretrained,
-                revision=revision + ("/" + subfolder if subfolder is not None else ""),
                 device_map="auto",
-                max_memory=max_memory,
-                offload_folder=offload_folder,
                 load_in_8bit=load_in_8bit,
-                trust_remote_code=trust_remote_code,
-                torch_dtype=torch_dtype,
             )
         else:
             from auto_gptq import AutoGPTQForCausalLM
