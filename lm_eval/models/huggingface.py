@@ -228,7 +228,8 @@ class HuggingFaceAutoLM(BaseLM):
             # `lm_head`'s.
             self._device = self.model.hf_device_map["lm_head"]
         if not use_accelerate:
-            self.model.to(self._device)
+#             self.model.to(self._device)
+            pass
 
     def _create_auto_model(
         self,
