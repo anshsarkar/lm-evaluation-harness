@@ -252,6 +252,7 @@ class HuggingFaceAutoLM(BaseLM):
                 pretrained,
                 device_map="auto",
                 load_in_8bit=True,
+                trust_remote_code = trust_remote_code,
             )
         else:
             from auto_gptq import AutoGPTQForCausalLM
